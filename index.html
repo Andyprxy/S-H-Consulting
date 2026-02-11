@@ -32,6 +32,14 @@
         }
         .chat-open { transform: translateY(0) scale(1); opacity: 1; pointer-events: all; }
         .chat-closed { transform: translateY(20px) scale(0.95); opacity: 0; pointer-events: none; }
+        
+        /* Custom Hover Glow for National Importance Image */
+        .glow-hover { transition: all 0.5s ease; }
+        .glow-hover:hover { 
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(184, 155, 94, 0.4);
+            filter: grayscale(0%);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-slate-500 selection:text-white">
@@ -132,7 +140,10 @@
                 </div>
             </div>
             <div class="md:w-1/2 relative order-1 md:order-2">
-                <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=2070&auto=format&fit=crop" class="w-full rounded shadow-2xl grayscale">
+                <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=2070&auto=format&fit=crop" class="w-full rounded shadow-2xl grayscale glow-hover cursor-pointer">
+                <div class="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 shadow-xl max-w-xs hidden md:block">
+                    <p class="text-sm font-bold border-l-2 border-gold pl-4 uppercase">G20 Summit Logistics Partner</p>
+                </div>
             </div>
         </div>
     </section>
@@ -142,29 +153,29 @@
             <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Track Record</span>
             <h2 class="text-3xl md:text-4xl text-slate-900 heading-font uppercase mb-16">Past Projects & Partners</h2>
             <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center overflow-hidden hover:border-gold transition duration-500">
-                        <img src="g20.png" class="w-full h-full object-contain" onerror="this.parentElement.innerHTML='<span class=\'text-xs p-2\'>G20 Logo</span>'">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div class="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center overflow-hidden hover:border-gold hover:scale-110 transition-all duration-500 cursor-pointer">
+                        <img src="g20.png" class="w-full h-full object-contain p-4" onerror="this.parentElement.innerHTML='<span class=\'text-xs p-2\'>G20 Logo</span>'">
                     </div>
-                    <span class="font-bold text-lg text-slate-800 heading-font uppercase">G20 Summit</span>
+                    <span class="font-bold text-lg text-slate-800 heading-font uppercase group-hover:text-gold transition">G20 Summit</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                     <div class="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center overflow-hidden hover:border-gold transition duration-500">
+                <div class="flex flex-col items-center gap-4 group">
+                     <div class="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center overflow-hidden hover:border-gold hover:scale-110 transition-all duration-500 cursor-pointer">
                         <img src="tutkoolestkids.jfif" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs p-2\'>Koolest Kids</span>'">
                     </div>
-                    <span class="font-bold text-lg text-slate-800 heading-font uppercase">Koolest Kids</span>
+                    <span class="font-bold text-lg text-slate-800 heading-font uppercase group-hover:text-gold transition">Koolest Kids</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                     <div class="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center overflow-hidden hover:border-gold transition duration-500">
-                        <img src="redbull.png" class="w-full h-full object-contain" onerror="this.parentElement.innerHTML='<span class=\'text-xs p-2\'>Red Bull</span>'">
+                <div class="flex flex-col items-center gap-4 group">
+                     <div class="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center overflow-hidden hover:border-gold hover:scale-110 transition-all duration-500 cursor-pointer">
+                        <img src="redbull.png" class="w-full h-full object-contain p-4" onerror="this.parentElement.innerHTML='<span class=\'text-xs p-2\'>Red Bull</span>'">
                     </div>
-                    <span class="font-bold text-lg text-slate-800 heading-font uppercase">Red Bull</span>
+                    <span class="font-bold text-lg text-slate-800 heading-font uppercase group-hover:text-gold transition">Red Bull</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="relative py-32 z-10 overflow-hidden bg-transparent">
+    <section id="contact" class="relative py-32 z-10 overflow-hidden bg-transparent border-t border-slate-200">
         <div class="absolute inset-0 z-0">
             <img src="whyy.JPG" class="w-full h-full object-cover grayscale-[30%]">
             <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
@@ -188,29 +199,62 @@
         </div>
     </section>
 
-    <footer class="bg-[#050505] text-white py-20 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <div class="mb-10 inline-block bg-white px-3 py-2 rounded-sm"><img src="sh.JPG" class="h-12 filter grayscale contrast-150"></div>
-            <h2 class="heading-font text-3xl md:text-4xl uppercase tracking-widest text-gray-500 mb-12">Events & Projects Consulting (PTY) LTD</h2>
-            <div class="mt-16 text-xs text-gray-600 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>&copy; 2026 S&H Group. Johannesburg, South Africa.</p>
-                <p>Digital Infrastructure by <span class="text-gold">Automania</span></p>
+    <footer class="bg-[#050505] text-white py-20 border-t border-gray-800 relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 text-left mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="bg-white inline-block px-3 py-2 rounded-sm mb-6">
+                        <img src="sh.JPG" class="h-12 filter grayscale contrast-150">
+                    </div>
+                    <h2 class="heading-font text-2xl uppercase tracking-widest text-white mb-4">S&H Group Holdings</h2>
+                    <p class="text-gray-400 text-sm max-w-sm leading-relaxed">Premier infrastructure and logistics partner for high-stakes mandates. Delivering excellence with military precision across Southern Africa.</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold uppercase text-xs tracking-widest mb-6">Contact Details</h4>
+                    <ul class="text-gray-400 text-sm space-y-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-phone text-gold"></i> +27 61 496 4840</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-gold"></i> info@shgroup.cloud</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-gold"></i> Johannesburg, South Africa</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold uppercase text-xs tracking-widest mb-6">Operating Hours</h4>
+                    <ul class="text-gray-400 text-sm space-y-4">
+                        <li>Mon - Fri: 08:00 - 17:00</li>
+                        <li>Sat - Sun: On Mandate Only</li>
+                        <li class="pt-2 text-white font-bold tracking-tighter">B-BBEE LEVEL 1 CONTRIBUTOR</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
+                <p>&copy; 2026 S&H Group. All Rights Reserved.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-gold transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold transition">Terms of Engagement</a>
+                </div>
+                <p>Digital Infrastructure by <span class="text-gold font-bold">Automania</span></p>
             </div>
         </div>
     </footer>
 
-    <button onclick="toggleChat()" class="fixed bottom-8 right-8 z-50 bg-gold text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition duration-300 ring-4 ring-white/50">
-        <i class="fas fa-comment-alt text-lg"></i>
+    <button onclick="toggleChat()" class="fixed bottom-8 right-8 z-50 bg-gold text-white px-6 h-14 rounded-full shadow-2xl flex items-center justify-center gap-3 hover:scale-105 transition duration-300 ring-4 ring-white/30 group">
+        <i class="fas fa-comment-dots text-lg"></i>
+        <span class="text-xs font-bold uppercase tracking-widest">Chat Live</span>
     </button>
-    <div id="chat-window" class="fixed bottom-24 right-8 w-80 bg-slate-900 rounded-lg shadow-2xl z-50 border border-gray-700 transition-all duration-300 chat-closed flex flex-col h-[450px] overflow-hidden">
+
+    <div id="chat-window" class="fixed bottom-24 right-8 w-85 md:w-96 bg-slate-900 rounded-lg shadow-2xl z-50 border border-gray-700 transition-all duration-300 chat-closed flex flex-col h-[500px] overflow-hidden">
         <div class="bg-black p-4 flex items-center justify-between border-b border-gray-800">
-            <span class="font-bold tracking-wide text-xs uppercase text-white">S&H Digital Desk</span>
+            <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-gold rounded-full animate-pulse"></div>
+                <span class="font-bold tracking-wide text-xs uppercase text-white">S&H Digital Desk</span>
+            </div>
             <button onclick="toggleChat()" class="text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
         </div>
         <div id="messages" class="flex-1 p-5 overflow-y-auto bg-slate-800/50 space-y-4 text-xs">
             <div class="flex items-start space-x-2">
                 <div class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-gold text-[10px] font-bold">S&H</div>
-                <div class="bg-slate-700 p-3 rounded-lg text-gray-200 border border-slate-600 max-w-[90%]">Welcome to S&H Group. How can we assist today?</div>
+                <div class="bg-slate-700 p-3 rounded-lg text-gray-200 border border-slate-600 max-w-[90%]">Welcome to S&H Group. How can we assist with your project or mandate today?</div>
             </div>
         </div>
         <div class="p-4 bg-slate-900 border-t border-gray-800">
