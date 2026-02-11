@@ -33,6 +33,7 @@
         .chat-open { transform: translateY(0) scale(1); opacity: 1; pointer-events: all; }
         .chat-closed { transform: translateY(20px) scale(0.95); opacity: 0; pointer-events: none; }
         
+        /* Custom Hover Glow Effect */
         .glow-hover { transition: all 0.5s ease; }
         .glow-hover:hover { 
             transform: scale(1.02);
@@ -50,7 +51,7 @@
                     <img src="sh.JPG" alt="S&H Logo" class="h-10 w-auto object-contain mix-blend-multiply">
                 </div>
                 <div class="hidden md:block h-8 w-px bg-gray-300"></div>
-                <span class="hidden md:block text-xs font-bold tracking-widest text-gray-400 uppercase">Group Holdings</span>
+                <span class="hidden md:block text-xs font-bold tracking-widest text-gray-500 uppercase">Group Holdings</span>
             </div>
             <div class="hidden md:flex space-x-10 items-center text-sm font-medium text-slate-600 uppercase tracking-wide">
                 <a href="#divisions" class="hover:text-gold transition duration-300">Our Divisions</a>
@@ -100,7 +101,7 @@
         <div class="grid md:grid-cols-3 gap-8">
             <div class="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg hover:shadow-2xl transition-all duration-500 min-h-[550px] hover:-translate-y-2">
                 <div class="h-72 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    <img src="mobility.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                 </div>
                 <div class="p-8 flex-1 flex flex-col justify-between border-t border-slate-100 bg-white">
                     <div>
@@ -209,8 +210,8 @@
     </section>
 
     <footer class="bg-[#050505] text-white py-20 border-t border-gray-800 relative z-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 text-left mb-16">
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-2">
                     <div class="bg-white inline-block px-3 py-2 rounded-sm mb-6">
                         <img src="sh.JPG" class="h-12 filter grayscale contrast-150">
@@ -221,9 +222,18 @@
                 <div>
                     <h4 class="text-gold font-bold uppercase text-xs tracking-widest mb-6">Contact Details</h4>
                     <ul class="text-gray-400 text-sm space-y-4">
-                        <li class="flex items-center gap-3"><i class="fas fa-phone text-gold"></i> +27 61 496 4840</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-gold"></i> info@shgroup.cloud</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-gold"></i> Johannesburg, South Africa</li>
+                        <li><i class="fas fa-phone text-gold mr-2"></i> +27 61 496 4840</li>
+                        <li><i class="fas fa-envelope text-gold mr-2"></i> info@shgroup.cloud</li>
+                        <li class="pt-2">
+                            <a href="https://wa.me/27693937899" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <i class="fab fa-whatsapp text-xl text-green-500"></i> WhatsApp HQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/sh_events_projects_consulting/" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <i class="fab fa-instagram text-xl text-pink-500"></i> Instagram
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -231,10 +241,10 @@
                     <ul class="text-gray-400 text-sm space-y-4">
                         <li class="text-white font-bold uppercase tracking-tighter">B-BBEE Level 1 Contributor</li>
                         <li>ISO 9001:2015 Compliant</li>
+                        <li>Registration: 2023/XXXXXX/07</li>
                     </ul>
                 </div>
             </div>
-            
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
                 <p>&copy; 2026 S&H Group. All Rights Reserved.</p>
                 <p>Digital Infrastructure by <span class="text-gold font-bold">Automania</span></p>
@@ -249,16 +259,13 @@
 
     <div id="chat-window" class="fixed bottom-24 right-8 w-85 md:w-96 bg-slate-900 rounded-lg shadow-2xl z-50 border border-gray-700 transition-all duration-300 chat-closed flex flex-col h-[500px] overflow-hidden">
         <div class="bg-black p-4 flex items-center justify-between border-b border-gray-800">
-            <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-gold rounded-full animate-pulse"></div>
-                <span class="font-bold tracking-wide text-xs uppercase text-white">S&H Digital Desk</span>
-            </div>
+            <span class="font-bold tracking-wide text-xs uppercase text-white">S&H Digital Desk</span>
             <button onclick="toggleChat()" class="text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
         </div>
         <div id="messages" class="flex-1 p-5 overflow-y-auto bg-slate-800/50 space-y-4 text-xs">
             <div class="flex items-start space-x-2">
                 <div class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-gold text-[10px] font-bold">S&H</div>
-                <div class="bg-slate-700 p-3 rounded-lg text-gray-200 border border-slate-600 max-w-[90%]">Welcome to S&H Group. How can we assist with your project today?</div>
+                <div class="bg-slate-700 p-3 rounded-lg text-gray-200 border border-slate-600 max-w-[90%]">Welcome. How can we assist with your project today?</div>
             </div>
         </div>
         <div class="p-4 bg-slate-900 border-t border-gray-800">
